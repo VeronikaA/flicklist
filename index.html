@@ -1,15 +1,18 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8"/>
 
   <script src="https://code.jquery.com/jquery-2.2.3.js"></script>  
+  <link rel="stylesheet" href="css/styles.css"/>
 
   <title>FlickList</title>
 </head>
 <body>
 
-  <header>
+  <header id="big-header">
     <h1>FlickList</h1>
     <p>Keep a list of all the movies you've been meaning to watch.</p>
   </header>
@@ -23,16 +26,41 @@
     <ul></ul>
   </section>
 
-  <!-- 
-  TODO 1
-  Add another section, very similar to the one above, for the user to browse movies
-  Give it an id of "section-browse"
-  It should display "Browse Movies" in large text
-  It should contain an empty unordered list
-  -->
-  
+  <section id="section-browse">
+    <header>
+      <h2>Browse Movies</h2>
+
+      <!-- 
+      TODO 6 (DONE)
+      add a <form> here for users to search for movies by title 
+      -->
+      <form id="form-search">
+        <input type="text" name="query"/>
+        <input type="submit" value="Search By Title"/>
+      </form>
+    </header>
+
+    
+
+    <ul></ul>
+  </section>
 
   <script src="js/flicklist.js"></script>
+  <script>
+    $(document).ready(function() {
+      // TODO 7 (DONE)
+      // add a submit handler for the form above
+      // should cause a fetch and re-render
+      $("#form-search").submit(function(evt) {
+        evt.preventDefault();
+        var query = $("#form-search input[name=query]").val();
+        searchMovies(query, render);
+      });
+      // even though we are adding the search form, we still want to fetch
+      // immediately here on doc ready so that the user sees some content initially
+      discoverMovies(render);
+    });
+  </script>
 
 </body> 
 </html>
