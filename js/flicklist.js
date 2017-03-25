@@ -70,7 +70,7 @@ function render() {
 		// the list item should include a button that says "Add to Watchlist"
 		
 		
-		var button = $("<button></button>").text("Add to Watchlist").click(function() {
+		var button = $("<button></button>").text("Add to Watchlist").click(function() {   //adding the Add to Watchlist button
 		
 		// TODO 5
 		// when the button is clicked, this movie should be added to the model's watchlist and render() should be called again
