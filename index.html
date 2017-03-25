@@ -60,7 +60,11 @@
       evt.preventDefault();
 
       // figure out what the user typed
-      var searchTerm = $("TODO 8b").val();
+      //var searchTerm = $("#form-search input [name=query]").val();
+       
+        var query = $("#form-search input[name=query]").val();
+        searchMovies(query, render);  // passing in search term and rendering as the callback
+      });
 
       // TODO 8c invoke the searchMovies function,
       // passing in the search term, and render as the callback
