@@ -45,7 +45,7 @@ function render() {
  
   // TODO 7 (DONE)
   // clear everything from both lists
-  $("#section-watchlist ul").empty();
+  $("#section-watchlist ul").empty();  //clear list
   $("#section-browse ul").empty();
   
   // TODO 6
