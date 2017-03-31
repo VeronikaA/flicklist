@@ -71,7 +71,7 @@ button:disabled {
 
 button, input[type="submit"] {
 	padding: 10px;
-	background: orange;
+	background: red;
 	border-width: 0px;
 	color: white;
 }
