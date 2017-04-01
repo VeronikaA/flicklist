@@ -46,17 +46,21 @@ function discoverMovies(callback) {
  * the callback function that was passed in
  */
 function searchMovies(searchTerm, callback) {
-  console.log("searching for movies with '" + searchTerm + "' in their title...");
-
-  // TODO 9
-  // implement this function as described in the comment above
-  // you can use the body of discoverMovies as a jumping off point
-
-
+  
+  $.ajax({
+    url: api.root + "/search/movie",
+    data: {
+      api_key: api.token,
+      query: query
+    },
+    success: function(response) {
+      model.browseItems = response.results;
+      callback(response);
+    }
+  });
 }
 
-
-/**
+  /**
  * re-renders the page with new content, based on the current state of the model
  */
 function render() {
@@ -89,6 +93,7 @@ function render() {
       // the button should be disabled if this movie is already in
       // the user's watchlist
       // see jQuery .prop() and Array.indexOf()
+       .prop("disabled", model.watchlistItems.indexOf(movie) !== -1);
 
 
     // TODO 1
