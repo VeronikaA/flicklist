@@ -93,8 +93,18 @@ function render() {
     // TODO 4a
     // add a poster image and append it inside the 
     // panel body above the button
-
-    // TODO 2g
+     var poster = $("<img></img>")
+      .attr("src", api.posterUrl(movie))  // add poster image
+      .attr("class", "img-responsive");
+    
+   
+      var panelBody = $("<div></div>") // panel body 
+      .attr("class", "panel-body")
+      .append(poster)
+      .append(button);
+        
+        
+     // TODO 2g
     // re-implement the li as a bootstrap panel with a heading and a body
     var itemView = $("<li></li>")
       .append(title)
