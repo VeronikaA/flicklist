@@ -111,10 +111,9 @@
       var query = $("#form-search input[name=query]").val();
       searchMovies(query, render);
     });
-    $("#browse-carousel").on("slid.bs.carousel", function() {
+    $("#browse-carousel").on("slid.bs.carousel", function() {      // Carousel
       console.log("the carousel just slid!");
       var newIndex = $("#browse-carousel").find(".active").index();
-      // TODO 
       // update the model and then re-render
       model.activeMovieIndex = newIndex;
       render();
