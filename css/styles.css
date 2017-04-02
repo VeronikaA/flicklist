@@ -25,7 +25,11 @@ TODO 5
 Make all elements have color: gray; by default
 Hint: just apply the style using a parent selector, and then all 
 descendent elements will automatically inherit the same styles
+
 */
+body {
+	color: gray;
+}
 
 
 #big-header {
@@ -55,6 +59,11 @@ ul {
 	padding-left: 0px;
 }
 
+/*
+TODO 7
+give these buttons some padding, and color them orange with white text
+*/
+
 button, input[type="submit"] {
 	border-width: 0px;
 	
@@ -68,12 +77,4 @@ button:disabled {
 	opacity: 0.5;
 }
 
-	/*
-	TODO 7
-	give these buttons some padding, and color them orange with white text
-	*/
-}
 
-button:disabled {
-	opacity: 0.5;
-}
