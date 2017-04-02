@@ -84,6 +84,11 @@ function render() {
 
     // TODO 2i
     // apply the classes "btn btn-danger" to the "I watched it button"
+    
+     var button = $("<button></button>")
+      .text("I watched it")
+      .attr("class", "btn btn-danger")
+      .click(function() {
 
     // TODO 4a
     // add a poster image and append it inside the 
