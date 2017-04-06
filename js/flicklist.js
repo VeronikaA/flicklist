@@ -64,7 +64,7 @@ function searchMovies(query, callback) {
         api_key: api.token,
         with_keywords: firstKeywordID
       };
-      discoverMovies(data, callback);
+      discoverMovies(data, callback); // call discoverMovies function,passing data and callback
     },
     function() {
       console.log("fetchkeywords failed")
