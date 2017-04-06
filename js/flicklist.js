@@ -55,6 +55,27 @@ function discoverMovies(callback) {
  * the API's response.
  */
 function searchMovies(query, callback) {
+   fetchKeywords(
+    query, 
+    function(keywordsResponse) {
+      console.log("fetch succeeded");
+      var firstKeywordID = keywordsResponse.results[0].id
+      var data = {
+        api_key: api.token,
+        with_keywords: firstKeywordID
+      };
+      discoverMovies(data, callback);
+    },
+    function() {
+      console.log("fetchkeywords failed")
+      var data = {
+        api_key: api.token
+      };
+      discoverMovies(data, callback);
+    }
+  );
+}
+
   // TODO 3
   // change the url so that we search for keywords, not movies
 
