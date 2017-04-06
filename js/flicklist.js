@@ -3,6 +3,7 @@
 var model = {
   watchlistItems: [],
   browseItems: [],
+  activeMovieIndex:2
 
 
   // TODO 
